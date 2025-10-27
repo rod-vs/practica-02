@@ -1,5 +1,5 @@
 
-iimport json
+import json
 import random
 from datetime import datetime
 
@@ -19,7 +19,8 @@ def convertir(precio_usd, moneda_destino, tasas):
     if not tasa:
         raise ValueError("Moneda no soportada")
     
-    return precio_usd * tasa
+    # Redondear a 2 decimales
+    return round(precio_usd * tasa, 2)
 
 # ------------------------------------------------------------
 # Registra una transacción en un archivo de historial
